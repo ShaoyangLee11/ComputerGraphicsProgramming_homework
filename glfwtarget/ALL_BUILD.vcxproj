@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3B0B64BF-6F3C-3BDE-93C3-6A74AE7C44A3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4 -BD:/Github本地/Computer_Graphics_Programming习题/glfwtarget --check-stamp-file D:/Github本地/Computer_Graphics_Programming习题/glfwtarget/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\CMake\share\cmake-4.2\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeDependentOption.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakePackageConfigHelpers.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-4.2\Modules\CheckCSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\CheckIncludeFile.cmake;C:\CMake\share\cmake-4.2\Modules\CheckLibraryExists.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageMessage.cmake;C:\CMake\share\cmake-4.2\Modules\FindThreads.cmake;C:\CMake\share\cmake-4.2\Modules\GNUInstallDirs.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CheckSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;C:\CMake\share\cmake-4.2\Modules\WriteBasicConfigVersionFile.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\cmake_uninstall.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\glfw3Config.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeRCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4 -BD:/Github本地/Computer_Graphics_Programming习题/glfwtarget --check-stamp-file D:/Github本地/Computer_Graphics_Programming习题/glfwtarget/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\CMake\share\cmake-4.2\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeDependentOption.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakePackageConfigHelpers.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-4.2\Modules\CheckCSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\CheckIncludeFile.cmake;C:\CMake\share\cmake-4.2\Modules\CheckLibraryExists.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageMessage.cmake;C:\CMake\share\cmake-4.2\Modules\FindThreads.cmake;C:\CMake\share\cmake-4.2\Modules\GNUInstallDirs.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CheckSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;C:\CMake\share\cmake-4.2\Modules\WriteBasicConfigVersionFile.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\cmake_uninstall.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\glfw3Config.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeRCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4 -BD:/Github本地/Computer_Graphics_Programming习题/glfwtarget --check-stamp-file D:/Github本地/Computer_Graphics_Programming习题/glfwtarget/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\CMake\share\cmake-4.2\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeDependentOption.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakePackageConfigHelpers.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-4.2\Modules\CheckCSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\CheckIncludeFile.cmake;C:\CMake\share\cmake-4.2\Modules\CheckLibraryExists.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageMessage.cmake;C:\CMake\share\cmake-4.2\Modules\FindThreads.cmake;C:\CMake\share\cmake-4.2\Modules\GNUInstallDirs.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CheckSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;C:\CMake\share\cmake-4.2\Modules\WriteBasicConfigVersionFile.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\cmake_uninstall.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\glfw3Config.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeRCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\CMake\bin\cmake.exe -SD:/Github本地/Computer_Graphics_Programming习题/glfw-3.4/glfw-3.4 -BD:/Github本地/Computer_Graphics_Programming习题/glfwtarget --check-stamp-file D:/Github本地/Computer_Graphics_Programming习题/glfwtarget/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\CMake\share\cmake-4.2\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\CMake\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeDependentOption.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakePackageConfigHelpers.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake\share\cmake-4.2\Modules\CheckCSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\CheckIncludeFile.cmake;C:\CMake\share\cmake-4.2\Modules\CheckLibraryExists.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake\share\cmake-4.2\Modules\FindPackageMessage.cmake;C:\CMake\share\cmake-4.2\Modules\FindThreads.cmake;C:\CMake\share\cmake-4.2\Modules\GNUInstallDirs.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\CMake\share\cmake-4.2\Modules\Internal\CheckSourceCompiles.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\CMake\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;C:\CMake\share\cmake-4.2\Modules\WriteBasicConfigVersionFile.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\cmake_uninstall.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\glfw3Config.cmake.in;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeRCCompiler.cmake;D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\4.2.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\ZERO_CHECK.vcxproj">
+      <Project>{D7335709-BF88-3DAE-A325-1281B1C47C65}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\allocator.vcxproj">
+      <Project>{B542A8A8-5D85-3CAE-B720-836E059F2555}</Project>
+      <Name>allocator</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\boing.vcxproj">
+      <Project>{3CBA9365-2634-3EE3-901F-2E673879A3FB}</Project>
+      <Name>boing</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\clipboard.vcxproj">
+      <Project>{2D3FCE20-028D-3388-9568-F6BF46026ED0}</Project>
+      <Name>clipboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\cursor.vcxproj">
+      <Project>{0434AD67-1DFA-32DC-AEED-2BD68035E5D1}</Project>
+      <Name>cursor</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\empty.vcxproj">
+      <Project>{AA4A9C81-4EEC-389E-8566-FBA7C51E98A9}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\events.vcxproj">
+      <Project>{DFE9452D-C8AA-35F8-BE94-B45E9B9DBBEC}</Project>
+      <Name>events</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\gamma.vcxproj">
+      <Project>{0B16C9A5-EE92-354F-9B07-CC02C2EECFC8}</Project>
+      <Name>gamma</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\gears.vcxproj">
+      <Project>{C93879F7-E3FD-3AFC-9C27-AF3A921545AD}</Project>
+      <Name>gears</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\src\glfw.vcxproj">
+      <Project>{5F3E1DF8-52B7-3638-B293-5058579C3F5A}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\glfwinfo.vcxproj">
+      <Project>{E51B54DD-CB8C-3DE4-8D14-0BDC0170F30E}</Project>
+      <Name>glfwinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\heightmap.vcxproj">
+      <Project>{17AC4164-79F2-3B20-AC74-FD240D0C91A4}</Project>
+      <Name>heightmap</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\icon.vcxproj">
+      <Project>{5A7D90E5-DC03-32CC-8E33-51525065450A}</Project>
+      <Name>icon</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\iconify.vcxproj">
+      <Project>{9515643D-346E-3360-A1BE-5787AE52B5B7}</Project>
+      <Name>iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\inputlag.vcxproj">
+      <Project>{F915A89F-3318-3E17-8BED-DAC36CAC21DB}</Project>
+      <Name>inputlag</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\joysticks.vcxproj">
+      <Project>{B9A326F7-338E-305F-A8F1-9C6D23C41107}</Project>
+      <Name>joysticks</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\monitors.vcxproj">
+      <Project>{10E12CE8-CC94-3E26-93AA-20EFBC5600A3}</Project>
+      <Name>monitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\msaa.vcxproj">
+      <Project>{FC190D1B-5AC0-3201-B5E3-FA826B676E4F}</Project>
+      <Name>msaa</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\offscreen.vcxproj">
+      <Project>{F325DBC4-34E6-3247-A11D-C01EC50F18B1}</Project>
+      <Name>offscreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\particles.vcxproj">
+      <Project>{9D05B785-B51E-3582-837B-0E09767F222B}</Project>
+      <Name>particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\reopen.vcxproj">
+      <Project>{32E1E18B-92B3-3FAB-8FD8-5EDBD7660D5E}</Project>
+      <Name>reopen</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\sharing.vcxproj">
+      <Project>{DE6E0668-C64F-3D24-AE60-D758196B6923}</Project>
+      <Name>sharing</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\splitview.vcxproj">
+      <Project>{CD0C0ACD-ADD6-3854-B584-0A21254736A8}</Project>
+      <Name>splitview</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\tearing.vcxproj">
+      <Project>{14368945-F6EC-3663-B72C-1412FB031449}</Project>
+      <Name>tearing</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\threads.vcxproj">
+      <Project>{A9043881-F71E-37A8-8795-65B67D3383C8}</Project>
+      <Name>threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\timeout.vcxproj">
+      <Project>{719F1501-C020-38DA-AE05-0A1332702921}</Project>
+      <Name>timeout</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\title.vcxproj">
+      <Project>{20A0683B-9F48-3FCE-9B5B-086D9E8C13B0}</Project>
+      <Name>title</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\triangle-opengl.vcxproj">
+      <Project>{6E451201-A8DC-327A-ABC0-C1D32E4D5814}</Project>
+      <Name>triangle-opengl</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\triangle-opengles.vcxproj">
+      <Project>{8FBC9034-EB18-3A83-BC46-22BF7DE4CF19}</Project>
+      <Name>triangle-opengles</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\triangle-vulkan.vcxproj">
+      <Project>{79461227-4928-3CA9-B67E-C2DA14D40726}</Project>
+      <Name>triangle-vulkan</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\wave.vcxproj">
+      <Project>{EA86820C-5088-3424-A086-C4D3BB39920B}</Project>
+      <Name>wave</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\tests\window.vcxproj">
+      <Project>{FDB80CB9-EEDF-3D66-B6E3-EE3EA7AA1C80}</Project>
+      <Name>window</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\examples\windows.vcxproj">
+      <Project>{F8E294D6-E69B-3535-AEBA-B213B3D1CDC2}</Project>
+      <Name>windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

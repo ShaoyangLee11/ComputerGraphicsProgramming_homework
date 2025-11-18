@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\CMakeFiles\ec681d303bd27cfb181d81a000564c5b\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D:\Github本地\Computer_Graphics_Programming习题\glfw-3.4\glfw-3.4\CMake\GenerateMappings.cmake" />
+    <None Include="D:\Github本地\Computer_Graphics_Programming习题\glfwtarget\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{59B8FC15-F8D2-381D-BFBC-8C8915F5384B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5E3007AF-C33B-3A9C-B821-201E2ED0580B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

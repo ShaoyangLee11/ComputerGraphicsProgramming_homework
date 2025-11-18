@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Github\u672c\u5730/Computer_Graphics_Programming\u4e60\u9898/glfwtarget/cmake_install.cmake",
+		"D:/Github\u672c\u5730/Computer_Graphics_Programming\u4e60\u9898/glfwtarget/src/cmake_install.cmake",
+		"D:/Github\u672c\u5730/Computer_Graphics_Programming\u4e60\u9898/glfwtarget/examples/cmake_install.cmake",
+		"D:/Github\u672c\u5730/Computer_Graphics_Programming\u4e60\u9898/glfwtarget/tests/cmake_install.cmake",
+		"D:/Github\u672c\u5730/Computer_Graphics_Programming\u4e60\u9898/glfwtarget/docs/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
