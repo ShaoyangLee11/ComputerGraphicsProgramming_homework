@@ -9,7 +9,7 @@ using namespace std;
 void init(GLFWwindow* window){}
 
 void display(GLFWwindow* window, double currentTime) {
-	glClearColor(1.0, 0.0, 0.0, 1.0);//指定清楚背景时所用的颜色，这里使用红色
+	glClearColor(1.0, 0.0, 0.0, 1.0);//指定清除背景时所用的颜色（可以理解为一种名为“清除色（clear color）”的颜色），这里使用红色
 	glClear(GL_COLOR_BUFFER_BIT);//清理颜色缓冲区中的数据，并用红色填充颜色缓冲区
 }
 
