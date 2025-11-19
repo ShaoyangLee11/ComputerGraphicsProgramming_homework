@@ -19,7 +19,7 @@ int main(){
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//指定GLFW的版本
 	GLFWwindow* window1 = glfwCreateWindow(600, 600, "Chapter2-Program1", NULL,NULL);//创建这个window的OpenGL属性（也称作Context,上下文）
-	glfwMakeContextCurrent(window1);//将新创建的窗口window1与他的上下文关联起来，window与context不会自动关联，必须调用此函数
+	glfwMakeContextCurrent(window1);//将新创建的窗口window1的上下文设置为你当前使用的上下文，window1的context不会当前你要使用的context自动关联，必须调用此函数!
 
 	//GLEW_part
 	if(glewInit()!=GLEW_OK){ exit(EXIT_FAILURE); }
