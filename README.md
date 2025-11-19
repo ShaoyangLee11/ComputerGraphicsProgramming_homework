@@ -45,6 +45,8 @@ VBO，译作顶点缓冲对象，用于存储顶点的数据（坐标，法线�
 
 VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式读取VBO中的数据
 
+<br>
+
 *2. Shader的创建*
 
 |步骤|（以顶点着色器为例）|
@@ -56,6 +58,8 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 |5.创建程序对象|*GLuint vfProgram = glCreateProgram();*|
 |6.把所有创建的着色器对象附加到程序对象上|*glAttachShader(vfProgram, vShader);*|
 |7.链接（link）程序对象|*glLinkProgram(vfProgram);*|
+
+<br>
 
 *3. Program Object (程序对象)*
 
@@ -69,3 +73,4 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 
 程序对象让你可以方便地管理和切换不同的着色器组合。例如，你可以有多个程序对象，每个对象对应不同的渲染效果。
 
+<br>
