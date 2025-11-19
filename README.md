@@ -41,4 +41,20 @@
 
 *1.Vertex Array Object(VAO) & Vertex Buffer Object(VBO)*
 
+VBO，译作顶点缓冲对象，用于存储顶点的数据（坐标，法线，纹理贴图等）
+
+VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式读取VBO中的数据
+
+*2.Shader的创建*
+
+|步骤|（以顶点着色器为例）|
+|---|---|
+|1.导入顶点着色器源码|实质上是创建了一个字符串数组 **vShaderSource** 去暂时存储这段源码|
+|2.创建顶点着色器对象|利用函数 *glCreateShader(GL_VERTEX_SHADER)* 创建名为 **vShader** 的着色器对象，数据类型为**GLuint**<br>其中函数传入的参数为**enum**类型，代表顶点着色器|
+|3.把着色器源码附加到着色器对象上|新创建的着色器对象并不附带任何源码<br>利用函数 *glShaderSource(vShader, 1, &vShaderSource, NULL)* 把着色器源码附加到着色器对象上|
+|4.编译顶点着色器|附着时，OpenGL 只是把你的 GLSL 源码（字符串）存储到着色器对象里，还没有把它变成可以在 GPU 上运行的机器代码。<br>只有调用 glCompileShader 编译后，OpenGL 才会把 GLSL 源码翻译成 GPU 能理解和执行的代码。这样 GPU 才能用你的着色器进行渲染。|
+|5.创建程序对象|*GLuint vfProgram = glCreateProgram();*|
+|6.把所有创建的着色器对象附加到程序对象上|*glAttachShader(vfProgram, vShader);*|
+|7.链接程序对象|*glLinkProgram(vfProgram);*|
+
 
