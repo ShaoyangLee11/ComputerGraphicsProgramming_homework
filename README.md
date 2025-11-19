@@ -28,3 +28,5 @@
 “上下文”（Context）是指 OpenGL 所有状态信息的集合。你可以把它理解为 OpenGL 的“工作环境”或“状态机”，它记录了当前所有的渲染设置、资源（如纹理、缓冲区对象、着色器等）以及与窗口系统的关联。
 
 在本例中，函数**glfwCreateWindow(600, 600, "Chapter2-Program1", NULL,NULL)** 为窗口对象window1设置了他自己的context,之后我们又使用函数**glfwMakeContextCurrent(window1)** 将我们当前要使用的context设置为窗口对象**window1** 的context。
+
+同时还要声明一点，OpenGL是***基于当前上下文的API***。如果更换上下文，那么之前绑定在当前上下文当中的VAO与VBO等都不再可用。
