@@ -17,4 +17,11 @@
 
 4.**GLM**:是OpenGL的数学库，提供矩阵，向量等数学运算。在本**Repository**中存储在文件夹“glm”中。
 
-在本**Repository**中已经为读者汇总了所需的所有头文件，存储在文件夹“OpenGLtemplate”中。
+在本**Repository**中已经为读者汇总了所需的所有头文件，存储在文件夹“OpenGLtemplate”中，读者可以自取。
+
+## 笔记的汇总
+
+2.1.1：
+
+1.
+
