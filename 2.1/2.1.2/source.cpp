@@ -41,6 +41,8 @@ GLuint createShaderProgram() {
 	
 	return vfProgram;
 }
+
+
 using namespace std;
 
 int main() {
