@@ -39,4 +39,6 @@
 
 ### 2.1.2：
 
-**
+*1.Vertex Array Object(VAO) & Vertex Buffer Object(VBO)*
+
+
