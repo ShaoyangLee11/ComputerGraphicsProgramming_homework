@@ -22,7 +22,25 @@
 
 ## 笔记汇总
 
+### 2.1.0:
+
+<br>
+
+*1.Pipline*
+
+|*Shader*|作用|
+|---|---|
+|1.顶点着色器(*Vertex Shader*)|进行顶点处理|
+|2.曲面细分着色器(*Tessellation Shader*)|进行图元（如三角形）处理|
+|3.几何着色器(*Geometry Shader*)|进行图元处理|
+|4.光栅化(*Rasteration*)|将*fragment*转化为像素|
+|5.片段着色器(*Fragment Shader*)|给转化后的像素赋予颜色|
+|6.像素操作等|隐藏面消除等|
+
+*2.GLuint数据类型*
+
 ### 2.1.1：
+
 <br>
 
 *1. 什么是上下文(Context)?*
@@ -31,7 +49,8 @@
 
 在本例中，函数 **glfwCreateWindow(600, 600, "Chapter2-Program1", NULL,NULL)** 为窗口对象window1设置了他自己的context,之后我们又使用函数 **glfwMakeContextCurrent(window1)** 将我们当前要使用的context设置为窗口对象**window1** 的context。
 
-同时还要声明一点，OpenGL是***基于当前上下文的API***。如果更换上下文，那么之前绑定在当前上下文当中的VAO与VBO等都不再可用。<br>
+同时还要声明一点，OpenGL是***基于当前上下文的API***。如果更换上下文，那么之前绑定在当前上下文当中的VAO与VBO等都不再可用。
+
 
 *2. 清除色(Clear Color)*
 
@@ -39,7 +58,7 @@
 <br>
 
 *3.*
-<br>
+
 
 ### 2.1.2：
 <br>
@@ -50,7 +69,7 @@ VBO，译作顶点缓冲对象，用于存储顶点的数据（坐标，法线�
 
 VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式读取VBO中的数据
 
-<br>
+
 
 *2. Shader的创建*
 
@@ -64,7 +83,7 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 |6.把所有创建的着色器对象附加到程序对象上|*glAttachShader(vfProgram, vShader);*|
 |7.链接（link）程序对象|*glLinkProgram(vfProgram);*|
 
-<br>
+
 
 *3. Program Object (程序对象)*
 
@@ -78,4 +97,5 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 
 程序对象让你可以方便地管理和切换不同的着色器组合。例如，你可以有多个程序对象，每个对象对应不同的渲染效果。
 
-<br>
+
+
