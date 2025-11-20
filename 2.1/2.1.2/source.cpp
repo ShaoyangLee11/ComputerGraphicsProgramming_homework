@@ -61,7 +61,7 @@ void display(GLFWwindow* window, double currentTime) {
 
 	glPointSize(30.0f);//设置点的大小
 
-	glDrawArrays(GL_POINTS, 0, 1);//绘制图元，这里绘制一个点
+	glDrawArrays(GL_POINTS, 0, 1);//绘制图元，这里绘制一个点。本函数的作用是启动整个管线过程
 }
 
 using namespace std;
