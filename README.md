@@ -103,12 +103,55 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 
 （在此提醒一下读者，2.3并不代表书中的“程序2.3”，而是代表**第2章第3小节**下附属的代码）
 
-在2.3中，我们不再使用直接通过字符串数组去承载*Shader*的源码，而是
+在2.3中，我们不再使用直接通过字符串数组去承载*Shader*的源码，而是定义了函数 *readShaderSource()* 来接收源码，函数代码如下：
+
+```
+string readShaderSource(const char* filePath) {
+	string content;
+	ifstream fileStream(filePath, ios::in);
+
+	if (!fileStream.is_open()) {
+		cerr << "Could not read file " << filePath << ". File does not exist." << endl;
+		return "";
+	}
+
+	string line = "";
+	while (!fileStream.eof()) {
+		getline(fileStream, line);
+		content.append(line + "\n");
+	}
+
+	fileStream.close();
+	return content;
+}
+
+GLuint createShaderProgram() {
+
+	string vShaderStr = readShaderSource("vertShader.glsl");
+	string fShaderStr = readShaderSource("fragShader.glsl");
+
+	const char* vShaderSource = vShaderStr.c_str();
+
+	const char* fShaderSource = fShaderStr.c_str();
+
+	GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
+	GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+	glShaderSource(vShader, 1, &vShaderSource, NULL);
+	glShaderSource(fShader, 1, &fShaderSource, NULL);//把着色器源码附加到着色器对象上
+
+	glCompileShader(vShader);
+	glCompileShader(fShader);
 
 
+	GLuint vfProgram = glCreateProgram();
+	glAttachShader(vfProgram, vShader);
+	glAttachShader(vfProgram, fShader);
+	glLinkProgram(vfProgram);
 
-
-
+	return vfProgram;
+}
+```
 
 
 
