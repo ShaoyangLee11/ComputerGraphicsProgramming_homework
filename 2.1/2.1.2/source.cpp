@@ -9,8 +9,14 @@ GLuint vao[numVAOs];
 
 GLuint createShaderProgram() {
 	// Placeholder for shader creation logic
-	const char* vShaderSource = "#version 330 core\nlayout(location = 0) in vec3 position;\nvoid main() { gl_Position = vec4(position, 1.0); }";//这一行就是顶点着色器的源码
-	const char* fShaderSource = "#version 330 core\nout vec4 color;\nvoid main() { color = vec4(1.0, 0.0, 0.0, 1.0); }";//这一段就是片段着色器的源码
+	const char* vShaderSource = "#version 430 core\n"
+								"void main()\n" 
+								"{ gl_Position = vec4(0.0, 0.0, 0.0, 1.0); }";//这一行就是顶点着色器的源码
+	
+	const char* fShaderSource = "#version 430 core\n"
+								"out vec4 color;\n"
+								"void main()"
+								"{ color = vec4(0.0, 0.0, 1.0, 1.0); }";//这一段就是片段着色器的源码
 
 	GLuint vShader = glCreateShader(GL_VERTEX_SHADER);//这里创建了顶点着色器对象，返回一个整数ID作为后边引用它的序号，但这个对象本身还没有任何实际的着色器代码。
 	GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);//这里创建了片段着色器对象，返回一个整数ID作为后边引用它的序号，但这个对象本身还没有任何实际的着色器代码。
@@ -42,9 +48,45 @@ GLuint createShaderProgram() {
 	return vfProgram;
 }
 
+void init(GLFWwindow* window) {
+	renderingProgram = createShaderProgram();
+	glGenVertexArrays(numVAOs, vao);//生成一个顶点数组对象
+	glBindVertexArray(vao[0]);//绑定顶点数组对象
+}
+
+void display(GLFWwindow* window, double currentTime) {
+	glClear(GL_COLOR_BUFFER_BIT);//清除颜色缓冲区
+
+	glUseProgram(renderingProgram);//使用着色器程序对象
+
+	glPointSize(30.0f);//设置点的大小
+
+	glDrawArrays(GL_POINTS, 0, 1);//绘制图元，这里绘制一个三角形
+}
 
 using namespace std;
 
 int main() {
+		//GLFW_part
+	if (!glfwInit()) { exit(EXIT_FAILURE); }//初始化失败直接exit
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//指定GLFW的版本
+	GLFWwindow* window1 = glfwCreateWindow(600, 600, "Chapter2-Program1", NULL,NULL);//创建这个window的OpenGL属性（也称作Context,上下文）
+	glfwMakeContextCurrent(window1);//将新创建的窗口window1的上下文设置为你当前使用的上下文，window1的context不会当前你要使用的context自动关联，必须调用此函数!
 
+	//GLEW_part
+	if(glewInit()!=GLEW_OK){ exit(EXIT_FAILURE); }
+	glfwSwapInterval(1);//开启垂直同步，防止撕帧
+
+	init(window1);
+
+	while (!glfwWindowShouldClose(window1)) {//检测窗口关闭事件
+		display(window1, glfwGetTime());//glfwGetTime会返回GLFW初始化之后经过的时间
+		glfwSwapBuffers(window1);//交换缓冲区
+		glfwPollEvents();
+	}
+
+	glfwDestroyWindow(window1);
+	glfwTerminate();
+	exit(EXIT_SUCCESS);
 }
