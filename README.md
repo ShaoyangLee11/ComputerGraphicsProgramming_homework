@@ -28,7 +28,7 @@
 
 *1.Pipline*
 
-|*Shader*|作用|
+|*Shader(依照管线顺序)*|作用|
 |---|---|
 |1.顶点着色器(*Vertex Shader*)|进行顶点处理|
 |2.曲面细分着色器(*Tessellation Shader*)|进行图元（如三角形）处理|
