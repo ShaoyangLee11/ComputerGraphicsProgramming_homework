@@ -159,7 +159,7 @@ GLuint createShaderProgram() {
 
 *1.Uniform类型*
 
-在 OpenGL 的 GLSL里，*uniform* 变量是一种 从 CPU（你的 C++ 代码）传递到 GPU 着色器 的变量，并且在一次 *draw call*（一次绘制过程）中保持不变。
+在 OpenGL 的 GLSL里，*uniform* 变量是一种 从 **CPU（你的 C++ 代码）传递到 GPU 着色器 的变量**，并且在一次 *draw call*（一次绘制过程）中保持不变。
 
 |特点|例子|
 |---|---|
@@ -167,10 +167,20 @@ GLuint createShaderProgram() {
 |2.对所有着色器阶段都是“全局”可见的|它不是“顶点独享”或“片元独享”的，而是可以让 shader pipeline 中所有阶段共享。|
 |3.在一次 draw call 内保持不变|例如：<br>*glDrawArrays(...);* <br>在这一条绘制命令里，uniform 对所有顶点和所有像素都是一样的。<br>如果你要改变它，必须：<br>*glUniform1f(loc, newValue);* <br>*glDrawArrays(...)*   // 此时才生效|
 
+传统使用方式（也是本书当中提供的例子）：
+```
 
+GLuint prog = ...;
+glUseProgram(prog);
 
+GLint loc = glGetUniformLocation(prog, "u_time");
+glUniform1f(loc, 3.14f);
 
+```
 
+利用函数*glGetUniformLocation(...)* 返回 uniform 在 shader 程序中的位置（也叫做ID）
+
+再利用*glUniform1f(...)* 向 uniform 传值。
 
 
 
