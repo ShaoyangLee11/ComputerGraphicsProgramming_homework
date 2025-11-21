@@ -182,6 +182,8 @@ glUniform1f(loc, 3.14f);
 
 再利用*glUniform1f(...)* 向 uniform 传值。
 
+### 第2章习题解析：
+
 
 
 
