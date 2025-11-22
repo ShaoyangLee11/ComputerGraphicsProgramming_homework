@@ -39,13 +39,13 @@
 |5.片段着色器(*Fragment Shader*)|给转化后的像素赋予颜色|
 |6.像素操作等|隐藏面消除等|
 
+![管线实例](https://learnopengl-cn.github.io/img/01/04/pipeline.png)
+
 （上图中的蓝色部分是我们可以自定义的部分）
 
 *2.GLuint数据类型*
 
 GLuint是OpenGL当中的一种无符号整数类型，。在OpenGL中，所有的对象并不以 “对象” 的形式存储，而是以**对象ID**的形式存储（例如VAO,VBO,程序对象以及着色器等）。
-
-![坐标实例](https://learnopengl-cn.github.io/img/01/04/ndc.png)
 
 ### 2.1.1：
 
@@ -69,7 +69,7 @@ GLuint是OpenGL当中的一种无符号整数类型，。在OpenGL中，所有�
 
 OpenGL仅当3D坐标在3个轴（x、y和z）上 **-1.0**到 **1.0**的范围内时才处理它。所有在这个范围内的坐标叫做**标准化设备坐标(Normalized Device Coordinates)**，此范围内的坐标最终显示在屏幕上 ***（在这个范围以外的坐标则不会显示）***。
 
-![管线实例](https://learnopengl-cn.github.io/img/01/04/pipeline.png)
+![坐标实例](https://learnopengl-cn.github.io/img/01/04/ndc.png)
 
 ### 2.1.2：
 <br>
