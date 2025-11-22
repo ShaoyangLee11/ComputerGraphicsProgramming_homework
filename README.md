@@ -47,6 +47,8 @@
 
 GLuint是OpenGL当中的一种无符号整数类型，。在OpenGL中，所有的对象并不以 “对象” 的形式存储，而是以**对象ID**的形式存储（例如VAO,VBO,程序对象以及着色器等）。
 
+![坐标实例](https://learnopengl-cn.github.io/img/01/04/ndc.png)
+
 ### 2.1.1：
 
 <br>
