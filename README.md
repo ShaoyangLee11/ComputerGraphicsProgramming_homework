@@ -41,6 +41,8 @@
 
 ![管线实例](https://learnopengl-cn.github.io/img/01/04/pipeline.png)
 
+（上图中的蓝色部分是我们可以自定义的部分）
+
 *2.GLuint数据类型*
 
 GLuint是OpenGL当中的一种无符号整数类型，。在OpenGL中，所有的对象并不以 “对象” 的形式存储，而是以**对象ID**的形式存储（例如VAO,VBO,程序对象以及着色器等）。
