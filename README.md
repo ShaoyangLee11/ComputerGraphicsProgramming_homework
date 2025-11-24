@@ -229,8 +229,36 @@ void main(){
 
 题4：
 
+本题的核心诉求是要保证图形的位移与帧率无关，换句话说就是：**无论帧率高或者低，在经过相同时间后，每个设备上三角形的位移都是一致的。**
 
+主函数和其余构造的函数都与**程序2.6**保持一致
 
+```
+void display(GLFWwindow* window, double currentTime) {
+	glClear(GL_DEPTH_BUFFER_BIT);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	glUseProgram(renderingProgram);
+
+	static float lastTime = 0.0f;//在这里我们申明static静态变量，以确保每次调用后储存的值不会清零，相当于将局部变量转为全局变量
+	static float dx = 0.0f;
+	float deltaTime = float(currentTime) - lastTime;//我们利用经过的时间来改变三角形的位移，而不是像程序2.6一样通过帧率来改变（程序2.6的逻辑是每刷新一帧就调用一次 display(...) 来改变一次位移，因此帧率高的设备移速就快，帧率低的移速就慢）
+
+	lastTime = float(currentTime);
+	static float speed=0.5f;
+	
+	dx = speed * deltaTime;
+	x+= dx;
+	if (x > 1.0f)  speed=-0.5f;
+	if (x < -1.0f) speed=0.5f;
+	GLuint offsetLoc = glGetUniformLocation(renderingProgram, "offset");
+	glProgramUniform1f(renderingProgram, offsetLoc, x);
+
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+}
+
+```
 
 
 
