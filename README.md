@@ -55,14 +55,14 @@ GLuint是OpenGL当中的一种无符号整数类型，。在OpenGL中，所有�
 
 “上下文”（Context）是指 OpenGL 所有状态信息的集合。你可以把它理解为 OpenGL 的“工作环境”或“状态机”，它记录了当前所有的渲染设置、资源（如纹理、缓冲区对象、着色器等）以及与窗口系统的关联。
 
-在本例中，函数 **glfwCreateWindow(600, 600, "Chapter2-Program1", NULL,NULL)** 为窗口对象window1设置了他自己的context,之后我们又使用函数 **glfwMakeContextCurrent(window1)** 将我们当前要使用的context设置为窗口对象**window1** 的context。
+在本例中，函数 ```glfwCreateWindow(600, 600, "Chapter2-Program1", NULL,NULL)``` 为窗口对象window1设置了他自己的context,之后我们又使用函数 ```glfwMakeContextCurrent(window1)``` 将我们当前要使用的context设置为窗口对象**window1** 的context。
 
 同时还要声明一点，OpenGL是***基于当前上下文的API***。如果更换上下文，那么之前绑定在当前上下文当中的VAO与VBO等都不再可用。
 
 
 *2. 清除色(Clear Color)*
 
-是指在**清除颜色缓冲区（通常是屏幕或帧缓冲）时所填充的颜色**。也就是说，每次调用 **glClear(GL_COLOR_BUFFER_BIT)** 时，OpenGL 会用你设置的清除色把整个颜色缓冲区填满。可以这样形象地理解：清除色就是“擦黑板”时用的颜色。每次开始新一帧渲染时，先用清除色把画布涂满，然后再绘制新的内容。
+是指在**清除颜色缓冲区（通常是屏幕或帧缓冲）时所填充的颜色**。也就是说，每次调用 ```glClear(GL_COLOR_BUFFER_BIT)``` 时，OpenGL 会用你设置的清除色把整个颜色缓冲区填满。可以这样形象地理解：清除色就是“擦黑板”时用的颜色。每次开始新一帧渲染时，先用清除色把画布涂满，然后再绘制新的内容。
 <br>
 
 *3.顶点输入*
@@ -88,11 +88,11 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 |---|---|
 |1.导入顶点着色器源码|实质上是创建了一个字符串数组 **vShaderSource** 去暂时存储这段源码|
 |2.创建顶点着色器对象|利用函数 *glCreateShader(GL_VERTEX_SHADER)* 创建名为 **vShader** 的着色器对象，数据类型为**GLuint**<br>其中函数传入的参数为**enum**类型，代表顶点着色器|
-|3.把着色器源码附加到着色器对象上|新创建的着色器对象并不附带任何源码<br>利用函数 *glShaderSource(vShader, 1, &vShaderSource, NULL)* 把着色器源码附加到着色器对象上|
+|3.把着色器源码附加到着色器对象上|新创建的着色器对象并不附带任何源码<br>利用函数 ```glShaderSource(vShader, 1, &vShaderSource, NULL)``` 把着色器源码附加到着色器对象上|
 |4.编译顶点着色器|附着时，OpenGL 只是把你的 GLSL 源码（字符串）存储到着色器对象里，还没有把它变成可以在 GPU 上运行的机器代码。<br>只有调用 glCompileShader 编译后，OpenGL 才会把 GLSL 源码翻译成 GPU 能理解和执行的代码。这样 GPU 才能用你的着色器进行渲染。|
-|5.创建程序对象|*GLuint vfProgram = glCreateProgram();*|
-|6.把所有创建的着色器对象附加到程序对象上|*glAttachShader(vfProgram, vShader);*|
-|7.链接（link）程序对象|*glLinkProgram(vfProgram);*|
+|5.创建程序对象|```GLuint vfProgram = glCreateProgram();```|
+|6.把所有创建的着色器对象附加到程序对象上|```glAttachShader(vfProgram, vShader);```|
+|7.链接（link）程序对象|```glLinkProgram(vfProgram);```|
 
 
 
@@ -112,7 +112,7 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 
 （在此提醒一下读者，2.3并不代表书中的“程序2.3”，而是代表**第2章第3小节**下附属的代码）
 
-在2.3中，我们不再使用直接通过字符串数组去承载*Shader*的源码，而是定义了函数 *readShaderSource()* 来接收源码，函数代码如下：
+在2.3中，我们不再使用直接通过字符串数组去承载*Shader*的源码，而是定义了函数 ```readShaderSource()``` 来接收源码，函数代码如下：
 
 ```
 string readShaderSource(const char* filePath) {
@@ -170,9 +170,9 @@ GLuint createShaderProgram() {
 
 |特点|例子|
 |---|---|
-|1.由 CPU 设置（glUniform 系列函数）|你必须在 C++/OpenGL 里写：<br> *glUniform1f(loc, 1.0f);* <br>shader 本身不能修改它。|
+|1.由 CPU 设置（glUniform 系列函数）|你必须在 C++/OpenGL 里写：<br> ```glUniform1f(loc, 1.0f);``` <br>shader 本身不能修改它。|
 |2.对所有着色器阶段都是“全局”可见的|它不是“顶点独享”或“片元独享”的，而是可以让 shader pipeline 中所有阶段共享。|
-|3.在一次 draw call 内保持不变|例如：<br>*glDrawArrays(...);* <br>在这一条绘制命令里，uniform 对所有顶点和所有像素都是一样的。<br>如果你要改变它，必须：<br>*glUniform1f(loc, newValue);* <br>*glDrawArrays(...)*   // 此时才生效|
+|3.在一次 draw call 内保持不变|例如：<br>```glDrawArrays(...);``` <br>在这一条绘制命令里，uniform 对所有顶点和所有像素都是一样的。<br>如果你要改变它，必须：<br>```glUniform1f(loc, newValue);``` <br>```glDrawArrays(...)```   // 此时才生效|
 
 传统使用方式（也是本书当中提供的例子）：
 ```
@@ -184,9 +184,9 @@ GLint loc = glGetUniformLocation(prog, "u_time");
 glUniform1f(loc, 3.14f);
 ```
 
-利用函数*glGetUniformLocation(...)* 返回 uniform 在 shader 程序中的位置（也叫做ID）
+利用函数```glGetUniformLocation(...)``` 返回 uniform 在 shader 程序中的位置（也叫做ID）
 
-再利用*glUniform1f(...)* 向 uniform 传值。
+再利用```glUniform1f(...)``` 向 uniform 传值。
 
 ### 第2章习题解析：
 
@@ -194,7 +194,7 @@ glUniform1f(loc, 3.14f);
 
 首先显示点的位置和颜色都不变，所以我们着色器源码依旧按照原先的代码即可。
 
-其次根据提示，我们只需要利用函数*glPointSize(...)*,即可，只不过不像书中实例一样传入常数，而是传入变量 **x** ,具体修改如下：
+其次根据提示，我们只需要利用函数```glPointSize(...)```,即可，只不过不像书中实例一样传入常数，而是传入变量 **x** ,具体修改如下：
 ```
 
 glPointSize(x);
