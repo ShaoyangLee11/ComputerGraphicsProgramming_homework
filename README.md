@@ -260,8 +260,31 @@ void display(GLFWwindow* window, double currentTime) {
 
 ```
 
+第3章主要介绍数学基础知识，在本Markdown文档中会在最后进行介绍。
 
+### 4.1:
 
+1.*Attribute*
+*什么是Attribute?*
+
+*Attribute*是在GLSL源码中利用**in**关键字引入的变量，例如：
+```
+layout(location = 0) in vec3 aPos;   // 顶点位置
+layout(location = 1) in vec3 aNormal; // 法线
+layout(location = 2) in vec2 aTex;   // 纹理坐标
+
+```
+这个代码块中**in**引入了3个attribute，分别是**aPos**、**aNormal**以及**aTex**，以**aPos**为例：
+
+假如我设定了一个如下的存储所有顶点的**VBO**：
+```
+float vertices[] = {
+    0.0f, 0.5f, 0.0f,
+   -0.5f,-0.5f, 0.0f,
+    0.5f,-0.5f, 0.0f
+};
+
+```
 
 
 
