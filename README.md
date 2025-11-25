@@ -285,7 +285,12 @@ float vertices[] = {
 };
 
 ```
-
+这个浮点数组就是**VBO**的化身，他代表3个三元数，或者称作3个坐标，但计算机并不会主动将这9个数读作3个三元数，为了解决这个问题，我们一般会在C++/OpenGL程序中使用这三个函数：
+```
+glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);//这里如果你的VBO中存储的都是一种类型的数据，stride可以写作0而不用写作3*sizeof(float),代表数据与数据之间紧密排列
+glEnableVertexAttribArray(0);
+```
 
 
 
