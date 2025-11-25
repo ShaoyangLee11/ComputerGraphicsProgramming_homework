@@ -259,6 +259,7 @@ void display(GLFWwindow* window, double currentTime) {
 }
 
 ```
+### 3:
 
 第3章主要介绍数学基础知识，在本Markdown文档中会在最后进行介绍。
 
