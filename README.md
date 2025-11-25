@@ -288,8 +288,9 @@ glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);//这
 glEnableVertexAttribArray(0);
 ```
 
-***glBindBuffer(GL_ARRAY_BUFFER, vbo)***:传入GLenum和数组首地址，相当于告诉计算机这个数组是什么。这里enum类型为**GL_ARRAY_BUFFER**，所以相当于告诉计算机这个浮点数组是VBO
-***glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0)***：
+```glBindBuffer(GL_ARRAY_BUFFER, vbo)```:传入GLenum和数组首地址，相当于告诉计算机这个数组是什么。这里enum类型为**GL_ARRAY_BUFFER**，所以相当于告诉计算机这个浮点数组是VBO.
+
+```glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0)```：
 
 0代表在GLSL源码中location的值；
 
@@ -301,8 +302,8 @@ GL_FALSE在此处否定的是是否需要对数据进行归一化(normalize),一
 
 3*sizeof(float)，表示stride(步长)，代表读取一个有效数据需要读几个bit；
 
+最后传入的是偏移量。偏移量 (offset) = 这个属性在 VBO 整体内存中的起始位置（单位：字节）。
 
-
-
+```glEnableVertexAttribArray(0)```:传入的是attribute的location,这个函数相当于打开GPU读取这段VBO的开关。
 
 
