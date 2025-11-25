@@ -182,7 +182,6 @@ glUseProgram(prog);
 
 GLint loc = glGetUniformLocation(prog, "u_time");
 glUniform1f(loc, 3.14f);
-
 ```
 
 利用函数*glGetUniformLocation(...)* 返回 uniform 在 shader 程序中的位置（也叫做ID）
@@ -203,7 +202,6 @@ x+= inc;
 if(x >= 30.0f) inc = -0.5f;
 if(x <= 1.0f) inc = 0.5f;
 glDrawArrays(GL_POINTS, 0, 1);
-
 ```
 同时为了实现周期性的变化，我加入了两个if判断语句。其余部分与**程序2.2**中的代码都一致。
 
@@ -224,7 +222,6 @@ void main(){
 		gl_Position = vec4( 0.25, 0.25, 0.0, 1.0);
 	}
 }
-
 ```
 
 题4：
@@ -257,7 +254,6 @@ void display(GLFWwindow* window, double currentTime) {
 
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
-
 ```
 ### 3:
 
@@ -273,7 +269,6 @@ void display(GLFWwindow* window, double currentTime) {
 layout(location = 0) in vec3 aPos;   // 顶点位置
 layout(location = 1) in vec3 aNormal; // 法线
 layout(location = 2) in vec2 aTex;   // 纹理坐标
-
 ```
 这个代码块中**in**引入了3个attribute，分别是**aPos**、**aNormal**以及**aTex**，以**aPos**为例：
 
@@ -293,6 +288,18 @@ glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);//这
 glEnableVertexAttribArray(0);
 ```
 
+***glBindBuffer(GL_ARRAY_BUFFER, vbo)***:传入GLenum和数组首地址，相当于告诉计算机这个数组是什么。这里enum类型为**GL_ARRAY_BUFFER**，所以相当于告诉计算机这个浮点数组是VBO
+***glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0)***：
+
+0代表在GLSL源码中location的值；
+
+3代表一个有效数据由几个分量构成（一个vec3的分量为3）；
+
+GL_FLOAT是GLenum类型，代表数据真实存储在VBO中的类型（float就对应GL_FLOAT,int就对应GL_INT，以此类推）；
+
+GL_FALSE在此处否定的是是否需要对数据进行归一化(normalize),一般都不需要归一化；
+
+3*sizeof(float)，表示stride(步长)，代表读取一个有效数据需要读几个bit；
 
 
 
