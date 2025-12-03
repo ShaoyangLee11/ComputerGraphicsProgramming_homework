@@ -306,3 +306,6 @@ GL_FALSE在此处否定的是是否需要对数据进行归一化(normalize),一
 
 ```glEnableVertexAttribArray(0)```:传入的是attribute的location,这个函数相当于打开GPU读取这段VBO的开关。
 
+### 4.2:
+
+
