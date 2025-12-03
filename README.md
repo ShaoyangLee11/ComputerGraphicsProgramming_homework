@@ -1,4 +1,4 @@
-# 我的图形学笔记*Part1*
+# 图形学笔记
 ## 写在题前
 
 本**Repository**意在为图书***Computer Graprics Programming(in OpenGL with C++)***, *written by V.S.Gordon and John Clevenger*提供书中的示例代码以及课后习题的代码实现，在我阅读与实现的过程中，会试图写下一些注释以便我自己与读者更好理解运行的过程。
@@ -104,7 +104,7 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 
 单独的着色器（比如顶点着色器或片段着色器）只是渲染流程中的一部分，不能独立工作。只有把它们组合起来，才能完成一次完整的渲染。
 
-**流程**：你需要用 glCreateProgram 创建一个程序对象，然后用 glAttachShader 把编译好的着色器对象附加到程序对象上。最后用 glLinkProgram 把这些着色器链接成一个可以在GPU上运行的“程序”。
+**流程**：你需要用```glCreateProgram(...)``` 创建一个程序对象，然后用``` glAttachShader(...)``` 把编译好的着色器对象附加到程序对象上。最后用 ```glLinkProgram(...)``` 把这些着色器链接成一个可以在GPU上运行的“程序”。
 
 程序对象让你可以方便地管理和切换不同的着色器组合。例如，你可以有多个程序对象，每个对象对应不同的渲染效果。
 
@@ -257,7 +257,7 @@ void display(GLFWwindow* window, double currentTime) {
 ```
 ### 3:
 
-第3章主要介绍数学基础知识，在本Markdown文档中会在最后进行介绍。
+第3章主要介绍数学基础知识，在本 **Repository** 中会在最后进行介绍,相关内容存放在 *线性代数补充.md* 中。
 
 ### 4.1:
 
@@ -305,5 +305,4 @@ GL_FALSE在此处否定的是是否需要对数据进行归一化(normalize),一
 最后传入的是偏移量。偏移量 (offset) = 这个属性在 VBO 整体内存中的起始位置（单位：字节）。
 
 ```glEnableVertexAttribArray(0)```:传入的是attribute的location,这个函数相当于打开GPU读取这段VBO的开关。
-
 
