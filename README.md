@@ -24,7 +24,11 @@
 
 ## 笔记汇总
 
-### 2.1.0:
+
+
+##Chapter 2 OpenGL图像管线
+
+### 2.1 OpenGL管线:
 
 <br>
 
@@ -114,6 +118,8 @@ VAO，译作顶点数组对象，用于告诉GPU以什么样的顺序和方式�
 
 在2.3中，我们不再使用直接通过字符串数组去承载*Shader*的源码，而是定义了函数 ```readShaderSource()``` 来接收源码，函数代码如下：
 
+
+
 ```
 string readShaderSource(const char* filePath) {
 	string content;
@@ -162,11 +168,15 @@ GLuint createShaderProgram() {
 }
 ```
 
+
+
 ### 2.5
 
 *1.Uniform类型*
 
 在 OpenGL 的 GLSL里，*uniform* 变量是一种 从 **CPU（你的 C++ 代码）传递到 GPU 着色器 的变量**，并且在一次 *draw call*（一次绘制过程）中保持不变。
+
+
 
 |特点|例子|
 |---|---|
@@ -174,7 +184,12 @@ GLuint createShaderProgram() {
 |2.对所有着色器阶段都是“全局”可见的|它不是“顶点独享”或“片元独享”的，而是可以让 shader pipeline 中所有阶段共享。|
 |3.在一次 draw call 内保持不变|例如：<br>```glDrawArrays(...);``` <br>在这一条绘制命令里，uniform 对所有顶点和所有像素都是一样的。<br>如果你要改变它，必须：<br>```glUniform1f(loc, newValue);``` <br>```glDrawArrays(...)```   // 此时才生效|
 
+
+
 传统使用方式（也是本书当中提供的例子）：
+
+
+
 ```
 
 GLuint prog = ...;
@@ -183,6 +198,8 @@ glUseProgram(prog);
 GLint loc = glGetUniformLocation(prog, "u_time");//u_time是这个uniform变量在shader中的变量名
 glUniform1f(loc, 3.14f);
 ```
+
+
 
 利用函数```glGetUniformLocation(...)``` 返回 uniform 在 shader 程序中的位置（也叫做ID）
 
@@ -195,6 +212,9 @@ glUniform1f(loc, 3.14f);
 首先显示点的位置和颜色都不变，所以我们着色器源码依旧按照原先的代码即可。
 
 其次根据提示，我们只需要利用函数```glPointSize(...)```,即可，只不过不像书中实例一样传入常数，而是传入变量 **x** ,具体修改如下：
+
+
+
 ```
 
 glPointSize(x);
@@ -203,11 +223,15 @@ if(x >= 30.0f) inc = -0.5f;
 if(x <= 1.0f) inc = 0.5f;
 glDrawArrays(GL_POINTS, 0, 1);
 ```
+
+
 同时为了实现周期性的变化，我加入了两个if判断语句。其余部分与**程序2.2**中的代码都一致。
 
 题2：
 
 只需更改GLSL源码中三个顶点的位置坐标即可，如果仅在原三角形的基础上更改一个顶点使其变成等腰三角形，则共有三种解法（题目要求也应为此意），这里仅给出一种解法，其余两种原理一致，读者可自行推导。
+
+
 
 ```
 #version 430
@@ -224,11 +248,15 @@ void main(){
 }
 ```
 
+
+
 题4：
 
 本题的核心诉求是要保证图形的位移与帧率无关，换句话说就是：**无论帧率高或者低，在经过相同时间后，每个设备上三角形的位移都是一致的。**
 
 主函数和其余构造的函数都与**程序2.6**保持一致
+
+
 
 ```
 void display(GLFWwindow* window, double currentTime) {
@@ -255,24 +283,36 @@ void display(GLFWwindow* window, double currentTime) {
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 ```
+
+
+##Chapter 3 数学基础
+
 ### 3:
 
 第3章主要介绍数学基础知识，在本 **Repository** 中会在最后进行介绍,相关内容存放在 *线性代数补充.md* 中。
-
+##Chapter 4 管理3D图形数据
 ### 4.1:
 
 1.*Attribute*
 *什么是Attribute?*
 
 *Attribute*是在GLSL源码中利用**in**关键字引入的变量，例如：
+
+
+
 ```
 layout(location = 0) in vec3 aPos;   // 顶点位置
 layout(location = 1) in vec3 aNormal; // 法线
 layout(location = 2) in vec2 aTex;   // 纹理坐标
 ```
+
+
 这个代码块中**in**引入了3个attribute，分别是**aPos**、**aNormal**以及**aTex**，以**aPos**为例：
 
 假如我设定了一个如下的存储所有顶点的**VBO**：
+
+
+
 ```
 float vertices[] = {
     0.0f, 0.5f, 0.0f,
@@ -281,11 +321,19 @@ float vertices[] = {
 };
 
 ```
+
+
 这个浮点数组就是**VBO**的化身，他代表3个三元数，或者称作3个坐标，但计算机并不会主动将这9个数读作3个三元数，为了解决这个问题，我们一般会在C++/OpenGL程序中使用这三个函数：
+
+
+
 ```
 glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);//这里如果你的VBO中存储的都是一种类型的数据，stride可以写作0而不用写作3*sizeof(float),代表数据与数据之间紧密排列
 glEnableVertexAttribArray(0);
+```
+
+```
 ```
 
 ```glBindBuffer(GL_ARRAY_BUFFER, vbo)```:传入GLenum和数组首地址，相当于告诉计算机这个数组是什么。这里enum类型为**GL_ARRAY_BUFFER**，所以相当于告诉计算机这个浮点数组是VBO.
@@ -307,4 +355,45 @@ GL_FALSE在此处否定的是是否需要对数据进行归一化(normalize),一
 ```glEnableVertexAttribArray(0)```:传入的是attribute的location,这个函数相当于打开GPU读取这段VBO的开关。
 
 ### 4.2:
+
+## Chapter 5 纹理贴图
+
+纹理（*Texture*）在地位上和着色器（*Shader*）是并列的。在加载着色器之前，我们要先创造一个类型为```GLuint```的着色器对象。对应地，在加载一种纹理之前，我们也要先创造一个**纹理对象**（*Texture Object*）。
+### 5.1 如何加载纹理贴图
+|步骤| 代码 |
+|--|--|
+|1.创建一个纹理对象|``` GLuint textureID; ```|
+|2.调用函数``` SOIL_load_OGL_texture(...)```|``` textureID = SOIL_load_OGL_texture(...);```|
+
+我们将这个模板化成一个函数```loadTexture(..)```， 返回值为```GLuint```，代码如下：
+
+
+
+```
+GLuint loadTexture(const char* texImagePath){
+	GLuint textureID;
+	textureID = SOIL_load_OGL_texture((texImagePath, 
+         SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+	if(textureID == 0) cout<< "could not find texture file"<<textureID<<endl;
+	return textureID;
+}
+```
+
+
+
+这个函数已经放在**Utils**头文件中，使用时直接引用其命名空间和函数名即可，不必重复实现:
+
+
+
+```
+GLuint textureID = Utils::loadTexture("image.jpg");
+```
+
+
+
+###5.2 纹理坐标
+
+本书中介绍的纹理都是**2D纹理贴图**，所以涉及到的纹理坐标都是**二元数**。
+
+我们将纹理贴图上的每个像素称作**纹元**（*Texel*），可以理解为纹理贴图的像素单元。
 
